@@ -14,8 +14,7 @@ y <- c( 2, 10 )
 
 y
 
-x <- c( 1 , 3 , 2 , 5 ) #vector
-x
+x <- c( 1 , 3 , 2 , 5 ) #numeric vector 
 
 
 x = c( 1 , 6 , 2 )
@@ -28,6 +27,12 @@ z = c( 5 , 2 , 5 , 9 )
 
 y
 
+
+#other types of vectors
+v1 <- c(TRUE, FALSE, TRUE)
+v2 <- c("Daniel", "Sandra", "Andrés")
+v3 <- c(4, Daniel)
+        
 
 #---------------------------
 #Length
@@ -289,7 +294,12 @@ dim(Auto)
 Auto[1:4, ]
 
 #missings
-which( is.na(Auto) ) #5 missings
+which( is.na(Auto$horsepower) ) #5 missings
+
+
+print("Position of missing values by column wise")
+sapply(Auto, function(x) which(is.na(x)))
+
 
 #Remove rows with missings
 Auto <- na.omit(Auto)
